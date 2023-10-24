@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Settings UI Design</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style3.css">
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <section class="" style="background-image:url(img/bgchuyenkhoa.jpg);background-repeat: no-repeat;background-size: cover;padding-top: 6%;padding-bottom: 20%;">
+        <div class="container">
+            <div class="bg-white shadow rounded-lg d-block d-sm-flex">
+                <div class="profile-tab-nav border-right" style="height:596px">
+                    <div class="p-4"> 
+                        <div class="img-circle text-center mb-3">
+                            <img src="" alt="Image" class="shadow">
+                        </div>
+                        <h4 class="text-center title_name"></h4>
+                    </div>
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
+                            <i class="fa fa-home text-center mr-1"></i> 
+                            Account
+                        </a>
+                        <a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
+                            <i class="fa fa-key text-center mr-1"></i> 
+                            Password
+                        </a>
+                        <a class="nav-link" id="security-tab" data-toggle="pill" href="#security" role="tab" aria-controls="security" aria-selected="false">
+                            <i class="fa fa-user text-center mr-1"></i> 
+                            Hospital Health Insurance
+                        </a>
+                        <a class="nav-link" id="application-tab" data-toggle="pill" href="#application" role="tab" aria-controls="application" aria-selected="false">
+                            <i class="fa fa-tv text-center mr-1"></i> 
+                            List Schedule
+                        </a>
+                        <a class="nav-link" id="notification-tab" data-toggle="pill" href="#notification" role="tab" aria-controls="notification" aria-selected="false">
+                            <i class="fa fa-bell text-center mr-1"></i> 
+                            Blog
+                        </a>
+                        <button class="nav-link logout" style="background-color:red; border: none;"> 
+                            LogOut
+                        </button>
+                    </div>
+                </div>
+                <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab" style="height:100%">
+                        
+                            <h3 class="mb-4">Account Settings</h3>
+                            <div class="row">
+                                <div class="col-md-6 mt-2">
+                                    <div class="form-group">
+                                        <label>Patient Name</label>
+                                        <input type="text" class="form-control patient-name" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-2">
+                                    <div class="form-group">
+                                        <label>Username</label>
+                                        <input type="text" class="form-control acc-name" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-2">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="text" class="form-control acc-email" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-2">
+                                    <div class="form-group">
+                                        <label>Phone number</label>
+                                        <input type="text" class="form-control acc-phone" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '').substring(0, 10);">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-2">
+                                    <div class="form-group">
+                                        <label>InsuranceId</label>
+                                        <input type="text" class="form-control acc-insurance" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-2">
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input type="text" class="form-control acc-address" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mt-2">
+                                    <form class="form_image" action=""  method="POST">
+                                        <!-- Input để chọn hình ảnh -->
+                                        <input type="file" id="imageInput" name="image" accept="image/*">
+                                        <!-- Nút "Tải lên" để gửi hình ảnh -->
+                                        <button type="submit" class="btn btn-primary btn-upload">Tải lên</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <button class="btn btn-success btn_apply_person" type="button">Apply</button>
+                                <button class="btn btn-primary btn_update_person" type="button">Update</button>
+                                <button class="btn btn-light btn_cancel_person" type="button">Cancel</button>
+                            </div>
+                        
+                    </div>
+                    <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+                        <form id="form_changepass" action=""  method="POST">
+                            <h3 class="mb-4">Password Settings</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Old password</label>
+                                        <input type="password" class="form-control oldpass">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>New password</label>
+                                        <input type="password" class="form-control newpass">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Confirm new password</label>
+                                        <input type="password" class="form-control conewpass">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn_changepass" type="submit">Update</button>
+                                <button class="btn btn-light btn_changepass_cancel" type="button">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
+                        <h3 class="mb-4">Hospital Health Insurance Settings</h3>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Insurance</button>
+                            <button class="btn btn-light registerInsurance" data-bs-toggle="modal" data-bs-target="#exampleModal_hhs">Register Insurance</button>
+                            <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal_upimage">Upload Image</button>
+                        </div>
+                        <form id="form_" action="" method="POST">
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Insurance ID</label>
+                                        <input type="text" class="form-control insuranceId" name="insuranceId" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Hospital Name</label>
+                                        <input type="text" class="form-control hospitalName" name="hospitalName" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>First Name</label>
+                                        <input type="text" class="form-control firstnameshow" name="insuranceId" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input type="text" class="form-control lastnameshow" name="hospitalName" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Birthdate</label>
+                                        <input type="date" class="form-control birthdateshow" name="insuranceId" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Create Date</label>
+                                        <input type="date" class="form-control createdateshow" name="hospitalName" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Fee</label>
+                                        <input type="number" class="form-control fee" name="fee" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Use Date</label>
+                                        <input type="date" class="form-control usedate" name="usedate" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="application" role="tabpanel" aria-labelledby="application-tab">
+                        <h3 class="mb-4">List Schedule</h3>
+                        <a href="http://localhost/TTTN/lichkhambenh.html" class="btn btn-primary">Go to registion schedule</a>
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <table class="table table-hover" id = "schedule-table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">#</th>
+                                      <th scope="col">Eventname</th>
+                                      <th scope="col">Date</th>
+                                      <th scope="col">Time</th>
+                                      <th scope="col">Status</th>
+                                      <th scope="col">Handle</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    
+                                    
+                                  </tbody>
+                                </table>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
+                        <h3 class="mb-4">Blog Settings</h3>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Insert_blog">Insert Blog</button>
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <table class="table table-hover" id = "blog-table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">#</th>
+                                      <th scope="col">Title</th>
+                                      <th scope="col">Description</th>
+                                      <th scope="col">CreateDate</th>
+                                      <th scope="col">Handle</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    
+                                    
+                                  </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="insuranceForm" action="/api/insert-insurance" method="POST">
+          <div class="modal-body">
+             
+                <div class="form-group">
+                    <label for="insuranceId">Insurance ID</label>
+                    <input type="text" class="form-control" id ="insuranceIdupdate" name="insuranceId" required>
+                </div>
+                <div class="form-group">
+                    <label for="hospitalName">Hospital Name</label>
+                    <select class="form-control" id = "hospitalNameupdate" name="hospitalName" required>
+                        <option value="Hospital ABC">Hospital ABC</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group" id="otherHospitalGroup" style="display: none;">
+                    <label for="otherHospital">Other Hospital</label>
+                    <input type="text" class="form-control" id="otherHospital" name="otherHospital">
+                </div>
+                <div class="form-group">
+                    <label for="fee">Fee</label>
+                    <input type="text" class="form-control feeupdate" name="fee" value = "Giảm viện phí -80%" readonly>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="form-group">
+                        <label for="fee">First Name</label>
+                        <input type="text" class="form-control firstname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fee">Last Name</label>
+                        <input type="text" class="form-control lastname" required>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label for="usedate">Birthday</label>
+                    <input type="date" class="form-control birthday" name="usedate" required>
+                </div>
+                 <div class="form-group">
+                    <label for="usedate">Create Date</label>
+                    <input type="date" class="form-control createdate" name="usedate" required>
+                </div>
+                <div class="form-group">
+                    <label for="usedate">Use Date</label>
+                    <input type="date" class="form-control useDate" name="usedate" required>
+                </div>
+                
+              
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="exampleModal_upimage" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="upinsuranceimage" action="/api/insert-insurance" method="POST">
+          <div class="modal-body">
+            <div class="row mt-1">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <img src="" alt="Image" class="image_hhs" style="width: 450px; height:200px">
+                                    </div>
+                                </div>
+                            </div>
+             <div class="col-md-12 mt-2">
+                                    <!-- Input để chọn hình ảnh -->
+                                    <input type="file" id="imageInsuranceInput" name="image" accept="image/*">
+                                    <!-- Nút "Tải lên" để gửi hình ảnh -->
+                                    
+                                </div> 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="exampleModal_hhs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="ask_insurance" action="" method="POST">
+          <div class="modal-body">
+            <div class="row mt-1 d-flex flex-column mx-3">
+                <div class="d-flex justify-content-between">
+                    <div class="form-group">
+                        <label for="fee">First Name</label>
+                        <input type="text" class="form-control firstname_askInsurance" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fee">Last Name</label>
+                        <input type="text" class="form-control lastname_askInsurance" required>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label for="usedate">Birthday</label>
+                    <input type="date" class="form-control birthday_askInsurance"required>
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="exampleModal_infoschedules" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" style="margin: auto;">
+    <div class="modal-content">
+      <form id="sheduleInfo" action="" method="POST">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Schedule Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: 20px;"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row mt-1 mx-3 d-flex flex-column">
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label for="name" style="font-weight: bold;">Name:</label>
+              <input type="text" id="name_info" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label for="email" style="font-weight: bold;">Email:</label>
+              <input type="email" id="email_info" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label for="phone" style="font-weight: bold;">Phonenumber:</label>
+              <input type="tel" id="phone_info"  style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label for="eventname" style="font-weight: bold;">Eventname:</label>
+              <input type="text" id="eventname_info"  style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label for="date" style="font-weight: bold;">Date:</label>
+              <input type="date" id="date_info"  style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label for="time" style="font-weight: bold;">Time:</label>
+              <input type="time" id="time_info"  style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label for="description" style="font-weight: bold;">Description:</label>
+              <textarea id="description_info" rows="5" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; resize: vertical;"></textarea>
+            </div>
+          </div>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+</div>
+     <div class="modal fade" id="Insert_blog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog" style="margin: auto;">
+        <div class="modal-content">
+          <form id="InsBlog" action="" method="POST">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Insert Blog</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: 20px;"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row mt-1 mx-3 d-flex flex-column">
+                <div class="form-group" style="margin-bottom: 15px;">
+                  <label for="name" style="font-weight: bold;">Name:</label>
+                  <input type="text" id="Blog_name_ins" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                  <label for="description" style="font-weight: bold;">Description:</label>
+                  <textarea id="Blog_des_ins" rows="5" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; resize: vertical;"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="Update_blog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog" style="margin: auto;">
+        <div class="modal-content">
+          <form id="UpsBlog" action="" method="POST">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Update Blog</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: 20px;"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row mt-1 mx-3 d-flex flex-column">
+                <div class="form-group" style="margin-bottom: 15px;">
+                  <label for="name" style="font-weight: bold;">Name:</label>
+                  <input type="text" id="Blog_name_ups" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                  <label for="description" style="font-weight: bold;">Description:</label>
+                  <textarea id="Blog_des_ups" rows="5" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; resize: vertical;"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="del_blog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog" style="margin: auto;">
+        <div class="modal-content">
+          <form id="DelBlog" action="" method="POST">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Delete Blog</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: 20px;"></button>
+            </div>
+            <div class="modal-body">
+              <label>Do you want to delete this blog</label>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </section>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="js/nofi.js"></script>
+    <script src="js/profilescript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        const numberInput = document.getElementsByClassName("acc-phone");
+
+        numberInput.addEventListener("keydown", function (e) {
+            if (isNaN(parseInt(e.key)) && e.key !== "Backspace" && e.key !== "Tab") {
+                e.preventDefault();
+            }
+        });
+        function isValidEmail(email) {
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return emailPattern.test(email);
+        }
+        const emailInput1 = document.getElementsByClassName("acc-email");
+        emailInput1.addEventListener("input", function() {
+            const emailValue = emailInput1.value;
+            if (isValidEmail(emailValue)) {
+                warning('Email is valid.');
+            } else {
+                warning('Email is not valid.');
+            }
+        });
+    </script>
+</body>
+</html>
