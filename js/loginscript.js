@@ -152,7 +152,7 @@ $(document).ready(function() {
                
                /*window.location.href = 'http://localhost/admin/dashboard.html';*/
               }else if(data.roleName == 'User'){}
-              window.location.href = '../person.html';
+              window.location.href = '../Deloy-Giaodien/person.html';
 
         }
       })
