@@ -21,7 +21,7 @@ $(document).ready(function () {
 
          }).then((result) => {
                 if (result) {
-                    window.location.href = 'http://localhost/TTTN/person.html';
+                    window.location.href = '../person.html';
                 }
             });
 

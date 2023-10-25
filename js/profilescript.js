@@ -26,7 +26,7 @@ $(document).ready(function () {
       $('.shadow').attr('src', imageUrl);
       }
       if(data.status == 0){
-        window.location.href = 'http://localhost/TTTN/login.html';
+        window.location.href = '../login.html';
         warning("please active your email");
       }
     },
@@ -76,7 +76,7 @@ function isTokenExpired(token) {
 }
 $(document).ready(function(){
 	if(localStorage.getItem('token') == null || isTokenExpired(localStorage.getItem('token')) == true){
-		 window.location.href = 'http://localhost/TTTN/login.html';
+		 window.location.href = '../login.html';
 	}
 });
 console.log(localStorage.getItem('token'))
@@ -230,7 +230,7 @@ $(document).ready(function () {
         console.log(data);
         success();
         setTimeout(function () {
-          window.location.href = 'http://localhost/TTTN/login.html';
+          window.location.href = '../login.html';
           sessionStorage.clear();
         }, 10000);
       },
@@ -424,7 +424,7 @@ $(document).ready(function () {
 $(document).ready(function(){
 	$('.logout').click(function() {
         localStorage.clear();
-        window.location.href = 'http://localhost/TTTN/login.html';
+        window.location.href = '../login.html';
     });
 })
 $(document).ready(function () {
